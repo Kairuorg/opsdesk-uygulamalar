@@ -20,9 +20,9 @@ Dört günde de aynı sıra izlenir.
 | 4 | **Uygulama 2.** Aşamalı, tek bir senaryo | Katılımcı yapar, takıldığında sorar |
 | 5 | **Kapanış.** Teslimler ve iki üç ekran paylaşımı | Herkes |
 
-Uygulamalar az ve uzundur: günde iki tane, her biri yaklaşık bir saat. Her uygulama, eğitimde anlatılan birkaç konuyu gerçek bir iş akışında birleştirir.
+Uygulamalar az ve uzundur: günde iki tane. Her uygulama, eğitimde anlatılan birkaç konuyu gerçek bir iş akışında birleştirir.
 
-Her günün ayrıca bir **ek uygulaması** vardır. İki uygulama planlanandan erken biterse ya da bir katılımcı ikisini de bitirirse yapılır. Yaklaşık 40 dakikalık, kendi başına tamamlanabilen bir geliştirme işidir.
+Her günün ayrıca bir **ek uygulaması** vardır. İki uygulama planlanandan erken biterse ya da bir katılımcı ikisini de bitirirse yapılır. Kendi başına tamamlanabilen bir geliştirme işidir.
 
 Üç kural:
 
@@ -49,10 +49,10 @@ Her gün dosyası aynı sırayla yazılmıştır:
 |---|---|
 | **Günün sırası** | Gösterimler ve uygulamalar, sırasıyla |
 | **Gösterimler** | Her uygulamadan önce canlı gösterilen örnek ve gösterilenler |
-| **Uygulama** | Senaryo, çıktılar, süreli aşamalar, her aşamanın kontrol noktası |
+| **Uygulama** | Senaryo, çıktılar, aşamalar içinde sıralı adımlar, her aşamanın kontrol noktası |
 | **Takılırsan** | Sık takılınan yerler ve bir sonraki adımı gösteren ipuçları |
 | **Erken bitirenlere** | Bir uygulamayı erken bitirenler için aynı konuyu derinleştiren kısa görevler |
-| **Ek uygulama** | İki uygulama da erken biterse yapılacak, yaklaşık 40 dakikalık aşamalı geliştirme işi |
+| **Ek uygulama** | İki uygulama da erken biterse yapılacak aşamalı geliştirme işi |
 | **Başvuru** | Gösterimlerde kullanılan ve uygulamalarda başvurulacak kod ve komutlar |
 
 ## Takılınca: yardım protokolü
@@ -68,7 +68,7 @@ Eğitim online olduğu için takılan kişinin görünür olması gerekir. Sıra
 4. Yardımcı eğitmen ayrı odada ekran paylaşımıyla bakar. Cevabı söylemez, bir sonraki ipucunu verir.
 5. Aynı soru üç kişiden gelirse eğitmen uygulamayı durdurur ve herkese açıklar.
 
-Eğitmen her aşamanın süresi dolduğunda durum yoklaması yapar: ✅ aşamayı bitirdim · ⏳ devam ediyorum · 🆘 takıldım.
+Eğitmen her aşamanın sonunda durum yoklaması yapar: ✅ aşamayı bitirdim · ⏳ devam ediyorum · 🆘 takıldım.
 
 Bir aşamada geride kalan, o aşamanın kontrol noktasını eğitmenle birlikte geçip bir sonrakine ilerler. Bir uygulamayı erken bitiren, o uygulamanın **Erken bitirenlere** maddelerine geçer. İki uygulamayı da bitiren günün ek uygulamasını yapar ya da takılan bir katılımcıya eşlik eder.
 
