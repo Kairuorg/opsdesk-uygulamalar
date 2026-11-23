@@ -130,6 +130,8 @@ Remove-Item deneme.db
 
 Kabul testleri hikâyenin her kriterini sınamıyor. Bunu söylemek yetmez; kanıtlayacaksın.
 
+Depodaki `mutants/` klasörünü Aşama 4'e kadar açma. İçinde eğitmenin hatalı uygulamaları var; onlara bakıp testlerini yazarsan kendi ölçümünü bozarsın.
+
 **Adım 8 — Boşlukları bul.** Agent'a yedi kriteri `tests/` altındaki testlerle eşleştirt: her kriter için onu kontrol eden test (`dosya:satır`) ve testlerin kontrol etmediği kısım. `CLAUDE.md`'deki kodlama kurallarını da listeye kattır. Listeyi körü körüne kabul etme: en az bir maddeyi, o testin hangi isteği gönderip neyi kontrol ettiğine bakarak kendin doğrula.
 
 **Adım 9 — Hatalı bir sürüm yazdır ve yeşil kaldığını gör.** Listendeki bir boşluğu seç. Agent'tan o kriteri ya da kuralı çiğneyen, ama 12 testin hepsini geçecek bir sürüm iste. Sonra:
@@ -175,7 +177,7 @@ API üzerinden yazılan hiçbir testle yakalayamadığın bir hatalı sürüm ç
 
 ### Aşama 4 — Eğitmenin hatalı uygulamaları
 
-**Adım 14 — Paketi aç.** Eğitmen bu aşamada bir zip dosyası paylaşır. Zip'i deponun köküne aç; `mutants/` klasörü ve `tests/test_ops101_reference.py` dosyası gelir.
+**Adım 14 — Eğitmenin paketini bul.** Paket depoda hazır: `mutants/` klasöründe altı hatalı uygulama ve skoru hesaplayan script, `tests/referans_ops101.py` dosyasında beş referans test. Referans testlerin dosya adı `test_` ile başlamadığı için `pytest -q` onları çalıştırmaz; Adım 17'de açıkça çağıracaksın.
 
 **Adım 15 — Testlerini altı hatalı uygulamaya karşı çalıştır.**
 
@@ -209,7 +211,7 @@ Neyi çiğniyor? Testlerin neden yakalamadı? Onu ne yakalardı?
 **Adım 17 — Kendi çözümünü referans testlerle sına.**
 
 ```bash
-pytest -q tests/test_ops101_reference.py
+pytest -q tests/referans_ops101.py
 ```
 
 Beklenen: `5 passed`. Kalan varsa, kalan testin adı çözümünün hangi kritere uymadığını söyler.
@@ -226,7 +228,7 @@ git commit -m "test: cover OPS-101 criteria the acceptance tests miss"
 git status --short
 ```
 
-`mutants/` klasörü, patch dosyaları ve referans test dosyası commit'e girmez; `git status --short` çıktısında izlenmeyen dosya olarak kalabilirler.
+Patch dosyaları commit'e girmez; `git status --short` çıktısında izlenmeyen dosya olarak kalabilirler.
 
 **Adım 19 — Cümleyi tamamla.** "Testler yeşilken şunu hâlâ bilmiyordum: …" Sohbete skorunla birlikte ✅ yaz.
 
