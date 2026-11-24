@@ -4,13 +4,13 @@ Bu klasör dört günlük **Agentic Software Engineering** eğitiminin uygulamal
 
 Her uygulamadan önce kısa bir gösterim yapılır: eğitmen, uygulamada kullanılacak tekniği başka bir örnek üzerinde agent ile canlı yürütür.
 
-**Hedef kitle.** Katılımcılar Claude Code ve Codex'i günlük işinde kullanan yazılımcılardır. Uygulamalar ve gösterimler araçların temel kullanımını anlatmaz. Konu, agent'la yapılan işin doğrulanması, ölçülmesi ve sınırlandırılmasıdır.
+**Hedef kitle.** Katılımcılar Claude Code ve Codex'i günlük işinde kullanan yazılımcılardır. Konu, agent'la yapılan işin doğrulanması, ölçülmesi ve sınırlandırılmasıdır. 2. gün bunun için gereken araçlar (talimat dosyaları, `.claude` klasörü, skill, hook, subagent, MCP, modlar, oturum yönetimi) konu konu, nasıl çalıştıklarıyla birlikte anlatılır.
 
 Tüm uygulamalar bu repodaki sentetik OpsDesk API'si üzerinde yapılır. Gerçek sistem, gerçek Jira, gerçek kimlik bilgisi kullanılmaz.
 
 ## Bir günün uygulamaları
 
-Dört günde de aynı sıra izlenir.
+1., 3. ve 4. günde aynı sıra izlenir. 2. gün farklıdır: kavramlar sabah anlatılır, öğleden sonra her konu bir örnek ve kısa adımlı bir uygulamayla işlenir; günün sonunda konuları bir arada kullanan projeler vardır. 2. günün dosyaları depo kökündeki `gun-2/` klasöründedir.
 
 | Sıra | Ne yapılır | Kim |
 |---|---|---|
@@ -35,7 +35,7 @@ Her günün ayrıca bir **ek uygulaması** vardır. İki uygulama planlanandan e
 | Gün | Konular | Uygulama 1 | Uygulama 2 | Ek uygulama (süre kalırsa) | Dosya |
 |---|---|---|---|---|---|
 | 1 | Agentic coding temelleri, Claude Code mimarisi, Git ve görev tabanlı geliştirme | OPS-101: yeşil testler neyi kanıtlamaz? | Belirsiz istekten PR'a: olay atama (OPS-106) | OPS-102: tek prompt, sıfır müdahale | `gun-1/README.md` |
-| 2 | Skills, Hooks, Subagents, MCP | Kod inceleme skill'i ve kalite kontrol hook'u | Log analiz MCP server'ı | OPS-104: kurulan araçlarla özellik geliştirme | `gun-2/README.md` |
+| 2 | Agent'ın çalışma ortamı: CLAUDE.md ve AGENTS.md, `.claude` klasörü ve memory, skill, hook, subagent ve çoklu agent, MCP, plan mode ve izin modları, compact, oturum kurtarma ve rewind | Sekiz konu; her biri örnek ve uygulama | Projeler: sekiz konuyu bir arada kullanan üç proje | Konu dosyalarındaki "Erken bitirenlere" maddeleri | `../gun-2/README.md` |
 | 3 | AI destekli kod kalitesi, agent güvenliği, otomasyon ve CI/CD | Legacy kodda hata düzeltme ve API testleri | Prompt injection değerlendirmesi ve quality gate | Güvenli refactoring | `gun-3/README.md` |
 | 4 | Claude Code × Codex, multi-agent orchestration, cross-review, değerlendirme | İki agent'la geliştirme ve cross-review | Final: hatalı PR'ın karşılaştırmalı incelemesi | OPS-105: paralel handoff | `gun-4/README.md` |
 
@@ -54,6 +54,8 @@ Her gün dosyası aynı sırayla yazılmıştır:
 | **Erken bitirenlere** | Bir uygulamayı erken bitirenler için aynı konuyu derinleştiren kısa görevler |
 | **Ek uygulama** | İki uygulama da erken biterse yapılacak aşamalı geliştirme işi |
 | **Başvuru** | Gösterimlerde kullanılan ve uygulamalarda başvurulacak kod ve komutlar |
+
+2. günün dosyaları farklı düzendedir: depo kökündeki `gun-2/` klasöründe bir gün README'si, her konu için bir klasör (README.md, görseller, şablonlar) ve projeler için `9-projeler/`.
 
 ## Takılınca: yardım protokolü
 
@@ -99,7 +101,7 @@ Bu depo eğitimin uygulamaları içindir ve gün gün büyür: her günün başl
 | Gün | `main` dalına eklenenler |
 |---|---|
 | 1 | OPS-101 çözülmemiş uygulama, bu rehber ve 1. günün uygulamaları |
-| 2 | OPS-101 referans çözümü, log verisi script'i, 2. günün uygulamaları |
+| 2 | OPS-101 referans çözümü, log verisi script'i, OpsDesk MCP sunucusu, 2. günün konu dosyaları, görselleri ve şablonları |
 | 3 | 2. günün referans çözümleri, legacy modül, hata biletleri, injection senaryoları, 3. günün uygulamaları |
 | 4 | Legacy hatalarının düzeltmesi ve referans testleri, 4. günün uygulamaları. Final uygulamasının PR'ı ayrı bir dalda gelir: `hatali-pr` |
 

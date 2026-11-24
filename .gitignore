@@ -10,3 +10,6 @@ __pycache__/
 *.sqlite
 *.sqlite3
 .DS_Store
+# Kisisel Claude Code dosyalari (2. gun)
+CLAUDE.local.md
+.claude/settings.local.json

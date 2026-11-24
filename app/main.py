@@ -1,4 +1,4 @@
-"""OpsDesk başlangıç API'si. OPS-101 filtresi bilinçli olarak UYGULANMAMIŞTIR."""
+"""OpsDesk eğitim API'si."""
 from contextlib import asynccontextmanager
 from fastapi import Depends, FastAPI, HTTPException, status
 from sqlalchemy import select
@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 
 from app.database import Base, engine, get_db
 from app.models import ApplicationLog, Incident, Task
-from app.schemas import IncidentCreate, IncidentRead, LogRead, TaskCreate, TaskRead
+from app.schemas import IncidentCreate, IncidentRead, LogRead, Severity, TaskCreate, TaskRead
 
 
 @asynccontextmanager
@@ -38,9 +38,11 @@ def create_task(payload: TaskCreate, db: Session = Depends(get_db)):
 
 
 @app.get("/incidents", response_model=list[IncidentRead])
-def list_incidents(db: Session = Depends(get_db)):
-    # TODO(OPS-101): opsiyonel severity parametresini kabul et, enum değerini doğrula, filtreyi SQL katmanında uygula.
-    return db.scalars(select(Incident).order_by(Incident.id)).all()
+def list_incidents(severity: Severity | None = None, db: Session = Depends(get_db)):
+    stmt = select(Incident).order_by(Incident.id)
+    if severity is not None:
+        stmt = stmt.where(Incident.severity == severity)
+    return db.scalars(stmt).all()
 
 
 @app.get("/incidents/{incident_id}", response_model=IncidentRead)
